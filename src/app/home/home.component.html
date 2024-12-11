@@ -1,14 +1,32 @@
 <div class="bg-[#E9EEF3]">
-    <div class="h-[685px] w-full bg-gradient-to-b from-[#17272E] to-[#005274] ">
+    <div class="h-[685px] w-full bg-gradient-to-b from-[#17272E] to-[#005274] max-[1080px]:h-auto ">
         <!-- barre de navigation -->
-        <nav class="flex h-[70px] w-full justify-around content-center border-b-[1px] border-[#e9eef315]">
-            <img ngSrc="logo.png" alt="logo" width="195" height="58" class="cursor-pointer hover:scale-[105%] duration-300">
+        <nav class="flex h-[70px] w-full gap-[820px] justify-center content-center border-b-[1px] border-[#e9eef315] max-[1080px]:gap-[400px] max-sm:gap-0 max-sm:justify-around">
+            <div class="w-[173px] content-center">
+                <img src="logo.png" alt="logo" class="cursor-pointer hover:scale-[105%] duration-300">
+            </div>
             <img ngSrc="drop.svg" alt="drop" width="40.5" height="27" class="cursor-pointer hover:scale-[105%] duration-300">
         </nav>
 
-        <div class="flex justify-center">
-            <div class="h-[540px] mt-[75px]">
-                <img ngSrc="imageHead.png" alt="logo" width="418" height="540">
+        <div class="flex justify-center gap-10 max-[1080px]:grid max-[1080px]:gap-6 max-[1080px]:mt-14 max-sm:mt-20">
+            <div class="w-[580px] text-white my-auto max-sm:w-full max-sm:px-5">
+                <h1  class="text-5xl tracking-wide font-bold max-sm:text-3xl overflow-hidden pb-2">
+                    <div id="accroche">
+                        Optez pour une bonne gestion de vos finances!
+                    </div>
+                </h1>
+                <div class="text-xl tracking-wide mt-10 mb-12 leading-relaxed max-sm:text-base overflow-hidden">
+                    <div id="desc">
+                        Bénéficiez d’une contrôle total de vos finances  grâces aux services de MTN-GROUP IS. Nous sommes un cabinet avec plus de 30ans d’expérience.
+                    </div>
+                </div>
+                <button class="w-[300px] h-[45px] flex gap-3 justify-center bg-[#1CCAFF] rounded-full animate-bounce ">
+                    <div class="text-[#17272E] font-bold content-center my-auto">Prendre un rendez vous</div>
+                    <img ngSrc="Next.svg" alt="next" width="24" height="24" class="my-auto">
+                </button>
+            </div>
+            <div id="imageHead" class="h-[540px] mt-[75px] max-sm:mx-auto max-sm:w-full max-sm:h-[278px] max-sm:mt-3">
+                <img ngSrc="imageHead.png" alt="logo" width="418" height="540" priority="high" class="max-sm:w-[215px] max-sm:h-[278px] mx-auto">
             </div>
         </div>
     </div>
