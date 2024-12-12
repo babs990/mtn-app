@@ -8,8 +8,9 @@
             <img ngSrc="drop.svg" alt="drop" width="40.5" height="27" class="cursor-pointer hover:scale-[105%] duration-300">
         </nav>
 
-        <div class="flex justify-center gap-10 max-[1080px]:grid max-[1080px]:gap-6 max-[1080px]:mt-14 max-sm:mt-20">
-            <div class="w-[580px] text-white my-auto max-sm:w-full max-sm:px-5">
+        <!-- Header -->
+        <div class="flex justify-center gap-10 max-[1080px]:grid max-[1080px]:gap-6 max-[1080px]:mt-14 max-sm:mt-20 overflow-hidden">
+            <div class="w-[580px] text-white my-auto max-sm:w-full max-sm:px-5 overflow-hidden">
                 <h1  class="text-5xl tracking-wide font-bold max-sm:text-3xl overflow-hidden pb-2">
                     <div id="accroche">
                         Optez pour une bonne gestion de vos finances!
@@ -20,14 +21,31 @@
                         Bénéficiez d’une contrôle total de vos finances  grâces aux services de MTN-GROUP IS. Nous sommes un cabinet avec plus de 30ans d’expérience.
                     </div>
                 </div>
-                <button class="w-[300px] h-[45px] flex gap-3 justify-center bg-[#1CCAFF] rounded-full animate-bounce ">
+                <button id="button" class="w-[300px] h-[45px] flex gap-3 justify-center bg-[#1CCAFF] rounded-full animate-bounce hover:bg-[#1ccaffcb]">
                     <div class="text-[#17272E] font-bold content-center my-auto">Prendre un rendez vous</div>
                     <img ngSrc="Next.svg" alt="next" width="24" height="24" class="my-auto">
                 </button>
             </div>
-            <div id="imageHead" class="h-[540px] mt-[75px] max-sm:mx-auto max-sm:w-full max-sm:h-[278px] max-sm:mt-3">
+            <div id="imageHead" class="h-[540px] mt-[75px] max-sm:mx-auto max-sm:w-full max-sm:h-[278px] max-sm:mt-3 ">
                 <img ngSrc="imageHead.png" alt="logo" width="418" height="540" priority="high" class="max-sm:w-[215px] max-sm:h-[278px] mx-auto">
             </div>
+        </div>
+
+        <!-- Statistiques -->
+        <div class="flex justify-center bg-[#00517450] backdrop-blur-3xl py-16 text-white gap-12">
+            @for (item of statistique; track item) {
+                <div class=" w-[305px] h-[346px] rounded-[44px] bg-[#1d1d1dee] backdrop-blur-3xl content-center shadow-ombreCarte">
+                    <div class="text-6xl font-bold text-center">
+                        {{item.chiffre}}+
+                    </div>
+                    <div class="text-2xl text-center my-9">
+                        {{item.nom}}
+                    </div>
+                    <div >
+                        <img [src]="item.icon" [alt]="item.nom" class="mx-auto">
+                    </div>
+                </div>
+            }
         </div>
     </div>
 </div>
