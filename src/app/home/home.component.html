@@ -1,5 +1,5 @@
 <div class="bg-[#E9EEF3]">
-    <div class="h-[685px] w-full bg-gradient-to-b from-[#17272E] to-[#005274] max-[1080px]:h-auto ">
+    <div class="h-[685px] w-full bg-gradient-to-b from-[#17272E] to-[#005274] max-[1080px]:h-[1100px] max-sm:max-h-[790px]">
         <!-- barre de navigation -->
         <nav class="flex h-[70px] w-full gap-[820px] justify-center content-center border-b-[1px] border-[#e9eef315] max-[1080px]:gap-[400px] max-sm:gap-0 max-sm:justify-around">
             <div class="w-[173px] content-center">
@@ -32,20 +32,45 @@
         </div>
 
         <!-- Statistiques -->
-        <div class="flex justify-center bg-[#00517450] backdrop-blur-3xl py-16 text-white gap-12">
+        <div class="flex justify-center bg-[#00517450] backdrop-blur-3xl py-16 text-white gap-12 overflow-hidden max-[1080px]:grid max-sm:gap-5">
             @for (item of statistique; track item) {
-                <div class=" w-[305px] h-[346px] rounded-[44px] bg-[#1d1d1dee] backdrop-blur-3xl content-center shadow-ombreCarte">
-                    <div class="text-6xl font-bold text-center">
+                <div [id]="item.nom" class=" w-[305px] h-[346px] rounded-[44px] bg-[#1d1d1dee] backdrop-blur-3xl content-center shadow-ombreCarte max-sm:w-[163px] max-sm:h-[185px]">
+                    <div class="text-6xl font-bold text-center max-sm:text-2xl">
                         {{item.chiffre}}+
                     </div>
-                    <div class="text-2xl text-center my-9">
+                    <div class="text-2xl text-center my-9 max-sm:text-base max-sm:my-3">
                         {{item.nom}}
                     </div>
-                    <div >
+                    <div class="max-sm:w-[50px] max-sm:mx-auto">
                         <img [src]="item.icon" [alt]="item.nom" class="mx-auto">
                     </div>
                 </div>
             }
+        </div>
+
+        <!-- apropos -->
+        <div class="mt-36 justify-center flex">
+            <div class="">
+                <img ngSrc="imageApropos.png" alt="image" width="486" height="530">
+            </div>
+            <div class="mt-2 w-[400px]">
+                <div class="text-4xl font-bold flex gap-5">
+                    <div class="w-[3px] h-[50px] bg-gradient-to-b from-[#17272E] to-[#005274]"></div>
+                    <div class="tracking-wider bg-gradient-to-b from-[#17272E] to-[#005274] bg-clip-text text-transparent">
+                        A propos de nous
+                    </div>
+                </div>
+                <div class="flex gap-5 mt-12 mb-14">
+                    <div class="w-[20px] h-[295px] bg-[#00517450]"></div>
+                    <div class="tracking-wider leading-[2.3]"> 
+                        Fondé en 2008, MTN GROUP IS est un cabinet de conseil spécialisé dans le secteur de la banque et de la finance. Fort de plus de 15 ans d'expérience, notre cabinet accompagne ses clients dans la réalisation de leurs projets stratégiques et financiers, en leur offrant des solutions sur mesure dans plusieurs domaines clés.
+                    </div>
+                </div>
+                <button id="button" class="w-[300px] h-[45px] flex gap-3 justify-center bg-gradient-to-b from-[#17272E] to-[#005274] rounded-full animate-bounce mx-auto">
+                    <div class="text-white font-bold content-center my-auto">Prendre un rendez vous</div>
+                    <img ngSrc="Next 2.svg" alt="next" width="24" height="24" class="my-auto">
+                </button>
+            </div>
         </div>
     </div>
 </div>
