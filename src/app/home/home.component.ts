@@ -81,6 +81,77 @@ export class HomeComponent implements AfterViewInit{
       }
     })
 
+    gsap.from('.imageApropos',{
+      opacity : 0,
+      duration : 1.5,
+      delay : 0,
+      translateX : -300,
+      smoothOrigin : true,
+      scrollTrigger : {
+        trigger : '.imageApropos',
+        start : 'top 90%',
+      }
+    })
+
+    gsap.from('#trait1',{
+      opacity : 0,
+      duration : 0.5,
+      delay : 1.5,
+      translateY : -100,
+      smoothOrigin : true,
+      scrollTrigger : {
+        trigger : '.imageApropos',
+        start : 'top 80%',
+      }
+    })
+
+    gsap.from('#apropos',{
+      opacity : 0,
+      duration : 0.5,
+      delay : 2,
+      translateX : -100,
+      smoothOrigin : true,
+      scrollTrigger : {
+        trigger : '.imageApropos',
+        start : 'top 80%',
+      }
+    })
+
+    gsap.from('#trait2',{
+      opacity : 0,
+      duration : 0.5,
+      delay : 2.5,
+      translateY : -400,
+      smoothOrigin : true,
+      scrollTrigger : {
+        trigger : '.imageApropos',
+        start : 'top 80%',
+      }
+    })
+
+    gsap.from('#descApropos',{
+      opacity : 0,
+      duration : 0.5,
+      delay : 3,
+      translateX : -100,
+      smoothOrigin : true,
+      scrollTrigger : {
+        trigger : '.imageApropos',
+        start : 'top 80%',
+      }
+    })
+
+    gsap.from('#button2',{
+      opacity : 0,
+      duration : 0.5,
+      delay : 3.5,
+      smoothOrigin : true,
+      scrollTrigger : {
+        trigger : '.imageApropos',
+        start : 'top 80%',
+      }
+    })
+
     console.log(this.statistique)
   }
 

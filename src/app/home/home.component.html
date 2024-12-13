@@ -1,5 +1,5 @@
 <div class="bg-[#E9EEF3]">
-    <div class="h-[685px] w-full bg-gradient-to-b from-[#17272E] to-[#005274] max-[1080px]:h-[1100px] max-sm:max-h-[790px]">
+    <div class="h-[685px] w-full bg-gradient-to-b from-[#17272E] to-[#005274] max-[1080px]:h-[1100px] max-sm:max-h-[775px]">
         <!-- barre de navigation -->
         <nav class="flex h-[70px] w-full gap-[820px] justify-center content-center border-b-[1px] border-[#e9eef315] max-[1080px]:gap-[400px] max-sm:gap-0 max-sm:justify-around">
             <div class="w-[173px] content-center">
@@ -9,7 +9,7 @@
         </nav>
 
         <!-- Header -->
-        <div class="flex justify-center gap-10 max-[1080px]:grid max-[1080px]:gap-6 max-[1080px]:mt-14 max-sm:mt-20 overflow-hidden">
+        <div class="z-0 flex justify-center gap-10 max-[1080px]:grid max-[1080px]:gap-6 max-[1080px]:mt-14 max-sm:mt-20 overflow-hidden">
             <div class="w-[580px] text-white my-auto max-sm:w-full max-sm:px-5 overflow-hidden">
                 <h1  class="text-5xl tracking-wide font-bold max-sm:text-3xl overflow-hidden pb-2">
                     <div id="accroche">
@@ -26,13 +26,13 @@
                     <img ngSrc="Next.svg" alt="next" width="24" height="24" class="my-auto">
                 </button>
             </div>
-            <div id="imageHead" class="h-[540px] mt-[75px] max-sm:mx-auto max-sm:w-full max-sm:h-[278px] max-sm:mt-3 ">
+            <div id="imageHead" class="h-[540px] mt-[75px] max-sm:mx-auto max-sm:w-full max-sm:h-[278px] max-sm:mb-auto max-sm:mt-3 ">
                 <img ngSrc="imageHead.png" alt="logo" width="418" height="540" priority="high" class="max-sm:w-[215px] max-sm:h-[278px] mx-auto">
             </div>
         </div>
 
         <!-- Statistiques -->
-        <div class="flex justify-center bg-[#00517450] backdrop-blur-3xl py-16 text-white gap-12 overflow-hidden max-[1080px]:grid max-sm:gap-5">
+        <div class="z-10 flex justify-center bg-[#97B7C7] py-16 text-white gap-12 overflow-hidden max-[1080px]:grid max-sm:gap-5 ">
             @for (item of statistique; track item) {
                 <div [id]="item.nom" class=" w-[305px] h-[346px] rounded-[44px] bg-[#1d1d1dee] backdrop-blur-3xl content-center shadow-ombreCarte max-sm:w-[163px] max-sm:h-[185px]">
                     <div class="text-6xl font-bold text-center max-sm:text-2xl">
@@ -49,24 +49,24 @@
         </div>
 
         <!-- apropos -->
-        <div class="mt-36 justify-center flex">
-            <div class="">
-                <img ngSrc="imageApropos.png" alt="image" width="486" height="530">
+        <div class="mt-36 justify-center flex overflow-hidden max-[1080px]:grid max-sm:mt-14">
+            <div class="imageApropos max-sm:mx-10">
+                <img ngSrc="imageApropos.png" alt="image" width="486" height="530" priority="high">
             </div>
-            <div class="mt-2 w-[400px]">
-                <div class="text-4xl font-bold flex gap-5">
-                    <div class="w-[3px] h-[50px] bg-gradient-to-b from-[#17272E] to-[#005274]"></div>
-                    <div class="tracking-wider bg-gradient-to-b from-[#17272E] to-[#005274] bg-clip-text text-transparent">
+            <div class="mt-2 w-[400px] max-sm:w-full content-center max-sm:mt-5 max-sm:px-8">
+                <div class="text-4xl font-bold flex gap-5 overflow-hidden max-sm:text-3xl max-sm:gap-3">
+                    <div id="trait1" class="w-[3px] h-[50px] bg-gradient-to-b from-[#17272E] to-[#005274] rounded-full"></div>
+                    <div id="apropos" class="tracking-wider bg-gradient-to-b from-[#17272E] to-[#005274] bg-clip-text text-transparent">
                         A propos de nous
                     </div>
                 </div>
-                <div class="flex gap-5 mt-12 mb-14">
-                    <div class="w-[20px] h-[295px] bg-[#00517450]"></div>
-                    <div class="tracking-wider leading-[2.3]"> 
+                <div class="flex gap-5 mt-12 mb-14 overflow-hidden max-sm:gap-3 max-sm:mt-8">
+                    <div id="trait2" class="w-[20px] h-[295px] bg-[#00517450] rounded-full"></div>
+                    <div id="descApropos" class="tracking-wider leading-[2.3]"> 
                         Fondé en 2008, MTN GROUP IS est un cabinet de conseil spécialisé dans le secteur de la banque et de la finance. Fort de plus de 15 ans d'expérience, notre cabinet accompagne ses clients dans la réalisation de leurs projets stratégiques et financiers, en leur offrant des solutions sur mesure dans plusieurs domaines clés.
                     </div>
                 </div>
-                <button id="button" class="w-[300px] h-[45px] flex gap-3 justify-center bg-gradient-to-b from-[#17272E] to-[#005274] rounded-full animate-bounce mx-auto">
+                <button id="button2" class="w-[300px] h-[45px] flex gap-3 justify-center bg-gradient-to-b from-[#17272E] to-[#005274] rounded-full animate-bounce mx-auto hover:to-[#17272E]">
                     <div class="text-white font-bold content-center my-auto">Prendre un rendez vous</div>
                     <img ngSrc="Next 2.svg" alt="next" width="24" height="24" class="my-auto">
                 </button>
