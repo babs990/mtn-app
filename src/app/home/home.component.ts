@@ -13,6 +13,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 })
 export class HomeComponent implements AfterViewInit{
 
+  ecran = window.innerWidth
+
   ngAfterViewInit(): void {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -46,41 +48,139 @@ export class HomeComponent implements AfterViewInit{
       smoothOrigin : true
     })
 
-    gsap.from('#Expériences',{
-      opacity : 0,
-      duration : 1,
-      translateY : 100,
-      smoothOrigin : true,
-      scrollTrigger : {
-        trigger : '#Expériences',
-        start : 'top 90%',
-      }
-    })
+    if(this.ecran > 640){
 
-    gsap.from('#Projets',{
-      opacity : 0,
-      duration : 1,
-      delay : 0.5,
-      translateY : 100,
-      smoothOrigin : true,
-      scrollTrigger : {
-        trigger : '#Projets',
-        start : 'top 90%',
-      }
-    })
+      gsap.from('#Expériences',{
+        opacity : 0,
+        duration : 1,
+        translateY : 100,
+        smoothOrigin : true,
+        scrollTrigger : {
+          trigger : '#Expériences',
+          start : 'top 90%',
+        }
+      })
+  
+      gsap.from('#Projets',{
+        opacity : 0,
+        duration : 1,
+        delay : 0.5,
+        translateY : 100,
+        smoothOrigin : true,
+        scrollTrigger : {
+          trigger : '#Projets',
+          start : 'top 90%',
+        }
+      })
+  
+      gsap.from('#Clients',{
+        opacity : 0,
+        duration : 1,
+        delay : 0.9,
+        translateY : 100,
+        smoothOrigin : true,
+        scrollTrigger : {
+          trigger : '#Clients',
+          start : 'top 90%',
+        }
+      })
 
-    gsap.from('#Clients',{
-      opacity : 0,
-      duration : 1,
-      delay : 0.9,
-      translateY : 100,
-      smoothOrigin : true,
-      scrollTrigger : {
-        trigger : '#Clients',
-        start : 'top 90%',
-      }
-    })
 
+      gsap.from('#trait1',{
+        opacity : 0,
+        duration : 0.5,
+        delay : 1.5,
+        translateY : -100,
+        smoothOrigin : true,
+        scrollTrigger : {
+          trigger : '.imageApropos',
+          start : 'top 80%',
+        }
+      })
+  
+      gsap.from('#apropos',{
+        opacity : 0,
+        duration : 0.5,
+        delay : 2,
+        translateX : -100,
+        smoothOrigin : true,
+        scrollTrigger : {
+          trigger : '.imageApropos',
+          start : 'top 80%',
+        }
+      })
+  
+      gsap.from('#trait2',{
+        opacity : 0,
+        duration : 0.5,
+        delay : 2.5,
+        translateY : -400,
+        smoothOrigin : true,
+        scrollTrigger : {
+          trigger : '.imageApropos',
+          start : 'top 80%',
+        }
+      })
+  
+      gsap.from('#descApropos',{
+        opacity : 0,
+        duration : 0.5,
+        delay : 3,
+        translateX : -100,
+        smoothOrigin : true,
+        scrollTrigger : {
+          trigger : '.imageApropos',
+          start : 'top 80%',
+        }
+      })
+  
+      gsap.from('#button2',{
+        opacity : 0,
+        duration : 0.5,
+        delay : 3.5,
+        smoothOrigin : true,
+        scrollTrigger : {
+          trigger : '.imageApropos',
+          start : 'top 80%',
+        }
+      })
+    }
+    else{
+      gsap.from('#Expériences',{
+        opacity : 0,
+        duration : 1,
+        translateY : 100,
+        smoothOrigin : true,
+        scrollTrigger : {
+          trigger : '#Expériences',
+          start : 'top 90%',
+        }
+      })
+  
+      gsap.from('#Projets',{
+        opacity : 0,
+        duration : 1,
+        translateY : 100,
+        smoothOrigin : true,
+        scrollTrigger : {
+          trigger : '#Expériences',
+          start : 'top 80%',
+        }
+      })
+  
+      gsap.from('#Clients',{
+        opacity : 0,
+        duration : 1,
+        translateY : 100,
+        smoothOrigin : true,
+        scrollTrigger : {
+          trigger : '#Expériences',
+          start : 'top 60%',
+        }
+      })
+
+    }
+    
     gsap.from('.imageApropos',{
       opacity : 0,
       duration : 1.5,
@@ -92,39 +192,38 @@ export class HomeComponent implements AfterViewInit{
         start : 'top 90%',
       }
     })
+    
 
     gsap.from('#trait1',{
       opacity : 0,
       duration : 0.5,
-      delay : 1.5,
       translateY : -100,
       smoothOrigin : true,
       scrollTrigger : {
-        trigger : '.imageApropos',
-        start : 'top 80%',
+        trigger : '#apropos',
+        start : 'top 90%',
       }
     })
 
     gsap.from('#apropos',{
       opacity : 0,
       duration : 0.5,
-      delay : 2,
+      delay : 0.5,
       translateX : -100,
       smoothOrigin : true,
       scrollTrigger : {
-        trigger : '.imageApropos',
-        start : 'top 80%',
+        trigger : '#apropos',
+        start : 'top 90%',
       }
     })
 
     gsap.from('#trait2',{
       opacity : 0,
       duration : 0.5,
-      delay : 2.5,
       translateY : -400,
       smoothOrigin : true,
       scrollTrigger : {
-        trigger : '.imageApropos',
+        trigger : '#descApropos',
         start : 'top 80%',
       }
     })
@@ -132,11 +231,11 @@ export class HomeComponent implements AfterViewInit{
     gsap.from('#descApropos',{
       opacity : 0,
       duration : 0.5,
-      delay : 3,
+      delay : 0.5,
       translateX : -100,
       smoothOrigin : true,
       scrollTrigger : {
-        trigger : '.imageApropos',
+        trigger : '#descApropos',
         start : 'top 80%',
       }
     })
@@ -144,13 +243,13 @@ export class HomeComponent implements AfterViewInit{
     gsap.from('#button2',{
       opacity : 0,
       duration : 0.5,
-      delay : 3.5,
       smoothOrigin : true,
       scrollTrigger : {
-        trigger : '.imageApropos',
-        start : 'top 80%',
+        trigger : '#descApropos',
+        start : 'top 60%',
       }
     })
+
 
     console.log(this.statistique)
   }
