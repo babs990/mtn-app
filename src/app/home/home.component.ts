@@ -164,7 +164,7 @@ export class HomeComponent implements AfterViewInit{
         smoothOrigin : true,
         scrollTrigger : {
           trigger : '#Expériences',
-          start : 'top 80%',
+          start : 'top 60%',
         }
       })
   
@@ -175,10 +175,9 @@ export class HomeComponent implements AfterViewInit{
         smoothOrigin : true,
         scrollTrigger : {
           trigger : '#Expériences',
-          start : 'top 60%',
+          start : 'top 40%',
         }
       })
-
     }
     
     gsap.from('.imageApropos',{
@@ -246,7 +245,7 @@ export class HomeComponent implements AfterViewInit{
       smoothOrigin : true,
       scrollTrigger : {
         trigger : '#descApropos',
-        start : 'top 60%',
+        start : 'top 10%',
       }
     })
 
