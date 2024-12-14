@@ -34,7 +34,7 @@
         <!-- Statistiques -->
         <div class="z-10 flex justify-center bg-[#97B7C7] py-16 text-white gap-12 overflow-hidden max-[1080px]:grid max-sm:gap-5 ">
             @for (item of statistique; track item) {
-                <div [id]="item.nom" class=" w-[305px] h-[346px] rounded-[44px] bg-[#1d1d1dee] backdrop-blur-3xl content-center shadow-ombreCarte max-sm:w-[163px] max-sm:h-[185px]">
+                <div [id]="item.nom" class=" w-[305px] h-[346px] rounded-[44px] bg-[#1d1d1dee] backdrop-blur-3xl place-content-center shadow-ombreCarte max-sm:w-[163px] max-sm:h-[185px]">
                     <div class="text-6xl font-bold text-center max-sm:text-2xl">
                         {{item.chiffre}}+
                     </div>
