@@ -1,7 +1,7 @@
 import { NgOptimizedImage } from '@angular/common';
 import { AfterViewInit, Component } from '@angular/core';
 import { gsap } from "gsap";
-import { stat } from './donnee';
+import { services, stat } from './donnee';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 @Component({
@@ -14,6 +14,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 export class HomeComponent implements AfterViewInit{
 
   ecran = window.innerWidth
+  readonly statistique = stat
+  readonly services = services
+  readonly service1 = this.services.filter((item)=>{
+    return this.services.indexOf(item) < 3
+  })
+  readonly service2 = this.services.filter((item)=>{
+    return this.services.indexOf(item) > 2
+  })
+
 
   ngAfterViewInit(): void {
     gsap.registerPlugin(ScrollTrigger);
@@ -144,6 +153,43 @@ export class HomeComponent implements AfterViewInit{
           start : 'top 80%',
         }
       })
+  
+      gsap.from('#conseil',{
+        opacity : 0,
+        translateY : -100,
+        duration : 1,
+        delay: 0.5,
+        smoothOrigin : true,
+        scrollTrigger : {
+          trigger : '#conseil',
+          start : 'top 80%',
+        }
+      })
+  
+      gsap.from('#analyse',{
+        opacity : 0,
+        translateY : -100,
+        duration : 1,
+        delay: 1,
+        smoothOrigin : true,
+        scrollTrigger : {
+          trigger : '#analyse',
+          start : 'top 80%',
+        }
+      })
+    
+      gsap.from('#projet',{
+        opacity : 0,
+        translateY : -100,
+        duration : 1,
+        delay: 0.5,
+        smoothOrigin : true,
+        scrollTrigger : {
+          trigger : '#projet',
+          start : 'top 80%',
+        }
+      })
+  
     }
     else{
       gsap.from('#Expériences',{
@@ -178,6 +224,40 @@ export class HomeComponent implements AfterViewInit{
           start : 'top 40%',
         }
       })
+
+      gsap.from('#conseil',{
+        opacity : 0,
+        translateY : -100,
+        duration : 1,
+        smoothOrigin : true,
+        scrollTrigger : {
+          trigger : '#conseil',
+          start : 'top 80%',
+        }
+      })
+  
+      gsap.from('#analyse',{
+        opacity : 0,
+        translateY : -100,
+        duration : 1,
+        smoothOrigin : true,
+        scrollTrigger : {
+          trigger : '#analyse',
+          start : 'top 80%',
+        }
+      })
+    
+      gsap.from('#projet',{
+        opacity : 0,
+        translateY : -100,
+        duration : 1,
+        smoothOrigin : true,
+        scrollTrigger : {
+          trigger : '#projet',
+          start : 'top 80%',
+        }
+      })
+
     }
     
     gsap.from('.imageApropos',{
@@ -245,13 +325,33 @@ export class HomeComponent implements AfterViewInit{
       smoothOrigin : true,
       scrollTrigger : {
         trigger : '#descApropos',
-        start : 'top 10%',
+        start : 'top 40%',
+      }
+    })
+
+    gsap.from('#consultance',{
+      opacity : 0,
+      translateY : -200,
+      duration : 1,
+      smoothOrigin : true,
+      scrollTrigger : {
+        trigger : '#consultance',
+        start : 'top 80%',
+      }
+    })
+
+    gsap.from('#investissement',{
+      opacity : 0,
+      translateY : -100,
+      duration : 1,
+      smoothOrigin : true,
+      scrollTrigger : {
+        trigger : '#investissement',
+        start : 'top 80%',
       }
     })
 
 
-    console.log(this.statistique)
   }
 
-  readonly statistique = stat
 }

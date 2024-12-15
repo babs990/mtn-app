@@ -72,5 +72,50 @@
                 </button>
             </div>
         </div>
+
+        <!-- services -->
+        <div class="">
+            <div class="text-5xl text-center font-bold mt-40 bg-gradient-to-b from-[#17272E] to-[#005274] bg-clip-text text-transparent">
+                Nos services
+            </div>
+            <div class="flex justify-center mt-20 overflow-hidden max-[1080px]:grid">
+                @for (item of service1; track item) {
+                    <div 
+                    class="w-[426px] h-[268px]  border-[#343a3d1e] hover:bg-[#343a3d10] duration-200 pt-[25px] max-[1080px]:border-x-0"
+                    [class.border-x-[1px]]="item.border"
+                    [class.border-y-[1px]]="item.border && ecran < 1080"
+                    [id]="item.n"
+                    >
+                        <img [ngSrc]="item.icon" [alt]="item.nom" width="73" height="72" class="mx-auto">
+                        <div class="bg-gradient-to-b from-[#17272E] to-[#005274] bg-clip-text text-transparent font-bold text-center my-5">
+                            {{item.nom}}
+                        </div>
+                        <div class="text-sm w-[321px] mx-auto text-center">
+                            {{item.txt}}
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="flex justify-center mt-10 overflow-hidden max-[1080px]:grid">
+                @for (item of service2; track item) {
+                    <div 
+                      class="w-[426px] h-[268px]  border-[#343a3d1e] hover:bg-[#343a3d10] duration-200 pt-[25px] max-[1080px]:border-r-0"
+                      [class.border-r-[1px]]="item.border"
+                      [class.border-b-[1px]]="item.border && ecran < 1080"
+                      [id]="item.n"
+                    >
+                        <img [ngSrc]="item.icon" [alt]="item.nom" width="73" height="72" class="mx-auto">
+                        <div class="bg-gradient-to-b from-[#17272E] to-[#005274] bg-clip-text text-transparent font-bold text-center my-5">
+                            {{item.nom}}
+                        </div>
+                        <div class="text-sm w-[321px] mx-auto text-center">
+                            {{item.txt}}
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
     </div>
+
 </div>
