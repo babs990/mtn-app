@@ -143,17 +143,6 @@ export class HomeComponent implements AfterViewInit{
         }
       })
   
-      gsap.from('#button2',{
-        opacity : 0,
-        duration : 0.5,
-        delay : 3.5,
-        smoothOrigin : true,
-        scrollTrigger : {
-          trigger : '.imageApropos',
-          start : 'top 80%',
-        }
-      })
-  
       gsap.from('#conseil',{
         opacity : 0,
         translateY : -100,
@@ -316,16 +305,6 @@ export class HomeComponent implements AfterViewInit{
       scrollTrigger : {
         trigger : '#descApropos',
         start : 'top 80%',
-      }
-    })
-
-    gsap.from('#button2',{
-      opacity : 0,
-      duration : 0.5,
-      smoothOrigin : true,
-      scrollTrigger : {
-        trigger : '#descApropos',
-        start : 'top 40%',
       }
     })
 
