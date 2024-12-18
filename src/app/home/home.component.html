@@ -1,12 +1,23 @@
 <div class="bg-[#E9EEF3]">
     <div class="h-[685px] w-full bg-gradient-to-b from-[#17272E] to-[#005274] max-[1080px]:h-[1100px] max-sm:max-h-[850px]">
         <!-- barre de navigation -->
-        <nav class="flex h-[70px] w-full gap-[820px] justify-center content-center border-b-[1px] border-[#e9eef315] max-[1080px]:gap-[400px] max-sm:gap-0 max-sm:px-4  max-sm:justify-between">
-            <div class="w-[173px] my-auto">
-                <img src="logo.png" alt="logo" class="cursor-pointer hover:scale-[105%] duration-300">
+        <nav class="">
+            <div class="flex h-[70px] w-full gap-[820px] justify-center content-center border-b-[1px] border-[#e9eef315] max-[1080px]:gap-[400px] max-sm:gap-0 max-sm:px-4  max-sm:justify-between">
+                <a href="#" class="w-[173px] my-auto">
+                    <img src="logo.png" alt="logo" class="cursor-pointer hover:scale-[105%] duration-300">
+                </a>
+                <img (click)="hideMenu()" ngSrc="drop.svg" alt="drop" width="40.5" height="27" class="cursor-pointer hover:scale-[105%] duration-300">
             </div>
-            <img ngSrc="drop.svg" alt="drop" width="40.5" height="27" class="cursor-pointer hover:scale-[105%] duration-300">
+
+            <div id="drop" class=" absolute w-full  bg-[#1ccaff3d] backdrop-blur-3xl text-white font-semibold py-2 z-50 hidden">
+                <div class="text-center cursor-pointer hover:bg-[#ffffff21] duration-300" (click)="apropos()"> A propos </div>
+                <div class="text-center my-2 cursor-pointer hover:bg-[#ffffff21] duration-300" (click)="service()"> Services </div>
+                <div class="text-center cursor-pointer hover:bg-[#ffffff21] duration-300" (click)="contact()"> Contact </div>
+            </div>
+
         </nav>
+
+        <!-- dropmenu content -->
 
         <!-- Header -->
         <div class="z-0 flex justify-center gap-10 max-[1080px]:grid max-[1080px]:gap-6 max-[1080px]:mt-14 max-sm:mt-20 overflow-hidden">
@@ -53,7 +64,7 @@
         </div>
 
         <!-- apropos -->
-        <div class="mt-36 justify-center flex overflow-hidden max-[1080px]:grid max-sm:mt-14">
+        <div id="propos" class="mt-36 justify-center flex overflow-hidden max-[1080px]:grid max-sm:mt-14">
             <div class="imageApropos max-sm:mx-10">
                 <img ngSrc="imageApropos.png" alt="image" width="486" height="530" priority="high">
             </div>
@@ -82,7 +93,7 @@
         </div>
 
         <!-- services -->
-        <div class="">
+        <div id="service" class="">
             <div class="text-5xl text-center font-bold mt-40 bg-gradient-to-b from-[#17272E] to-[#005274] bg-clip-text text-transparent">
                 Nos services
             </div>
@@ -145,7 +156,7 @@
           id="contact" 
           class= "mt-52 font-bold text-6xl max-sm:text-3xl max-sm:mt-20" 
         >
-            <div class="text-center">
+            <div class="text-center bg-gradient-to-b from-[#17272E] to-[#005274] bg-clip-text text-transparent">
               Contactez nous
             </div>
             <div class="flex mt-20 justify-center gap-10 animate-bounce max-sm:gap-6 max-sm:mt-14">
@@ -163,7 +174,14 @@
                 </a>
             </div>
         </div>
-  
+
+        <!-- footer -->
+        <div class="mt-20 w-full border-t-[1px] border-[#343a3d49] flex justify-center pt-5 pb-10 gap-1">
+            <img ngSrc="copyright.svg" alt="copyright" width="15" height="15">
+            <div class="">
+                2024 MTN GROUP IS | by <a href="https://portfolio-murex-six-46.vercel.app/" class="text-orange-500 font-bold"> Babacar Nguirane </a>
+            </div>
+        </div>
     </div>
 
 </div>

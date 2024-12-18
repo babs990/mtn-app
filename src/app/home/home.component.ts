@@ -1,5 +1,5 @@
 import { NgOptimizedImage } from '@angular/common';
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef } from '@angular/core';
 import { gsap } from "gsap";
 import { services, stat } from './donnee';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -16,6 +16,7 @@ export class HomeComponent implements AfterViewInit{
   ecran = window.innerWidth
   readonly statistique = stat
   readonly services = services
+  element : any 
   readonly service1 = this.services.filter((item)=>{
     return this.services.indexOf(item) < 3
   })
@@ -23,6 +24,47 @@ export class HomeComponent implements AfterViewInit{
     return this.services.indexOf(item) > 2
   })
 
+  constructor(el:ElementRef){
+    this.element = el
+  }
+
+  hideMenu(){
+    if(this.element.nativeElement.querySelector('#drop').classList.contains('hidden')){
+      this.element.nativeElement.querySelector('#drop').classList.remove('hidden')
+      gsap.from('#drop',{
+        opacity : 0,
+        duration : 0.5,
+        translateY : 20,
+        smoothOrigin : true
+      })  
+    }else{
+      this.element.nativeElement.querySelector('#drop').classList.add('hidden')
+    }
+  }
+
+  apropos(){
+    document.getElementById("propos")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest"
+    });
+  }
+
+  service(){
+    document.getElementById("service")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest"
+    });
+  }
+
+  contact(){
+    document.getElementById("contact")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest"
+    });
+  }
 
   ngAfterViewInit(): void {
     gsap.registerPlugin(ScrollTrigger);
